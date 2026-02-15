@@ -1344,7 +1344,7 @@
         }
 
         .plan-features li::before {
-            content: '⌚';
+            content: '⫸';
             position: absolute;
             left: 0;
             color: var(--primary-cyan);
@@ -1847,3 +1847,179 @@
         ::-webkit-scrollbar-thumb:hover {
             background: linear-gradient(var(--primary-pink), var(--primary-cyan));
         }
+
+        /* ... (The end of your existing scrollbar code) ... */
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(var(--primary-pink), var(--primary-cyan));
+}
+
+/* ============================= */
+/* Button Transparent Annimation */
+/* ============================= */
+
+/* --- Cyberpunk Tooltip System --- */
+[data-tooltip] {
+    position: relative;
+    cursor: help;
+}
+
+[data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(15, 5, 26, 0.95);
+    color: var(--primary-cyan);
+    border: 1px solid var(--primary-cyan);
+    padding: 8px 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 90% 100%, 0% 100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+[data-tooltip]:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    text-shadow: 0 0 5px var(--primary-cyan);
+}
+
+/* Optional Arrow */
+[data-tooltip]::after {
+    content: '';
+    position: absolute;
+    bottom: 115%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    border-width: 6px;
+    border-style: solid;
+    border-color: var(--primary-cyan) transparent transparent transparent;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+/* --- Dedicated IRC Tooltip (Downwards) --- */
+.has-tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.has-tooltip::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-5px); 
+    width: 180px;
+    padding: 15px 10px;
+    
+    /* Centering */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background: rgba(15, 5, 26, 0.98);
+    color: var(--primary-cyan);
+    border: 1px solid var(--primary-cyan);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    z-index: 1000;
+    
+    clip-path: none; 
+    
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease-out;
+    pointer-events: none;
+}
+/* Hover State */
+.has-tooltip:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* About Button annimation */
+
+/* --- Hero Tooltip: Spacing & Width Fix --- */
+.has-tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.has-tooltip::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    
+    /* 1. POSITIONING: Lowered to clear the button entirely */
+    top: 170%;             /* Increased to ensure it's below the button level */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px); 
+    
+    /* 2. WIDTH: Dynamic sizing to fit all text */
+    width: max-content;    /* Box expands to fit your text */
+    min-width: 220px;
+    padding: 15px 25px;    /* Generous side padding */
+    
+    /* 3. CENTERING */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1;
+
+    /* THE REVIVED COLOR SCHEME */
+    background: rgba(15, 5, 26, 0.8); 
+    border: 1px solid rgba(0, 255, 255, 0.5); 
+    color: var(--primary-cyan); 
+    
+    /* Typography */
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    z-index: 1000;
+    
+    /* High-Tech Effects */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+    
+    /* Animation */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-out;
+    pointer-events: none;
+}
+
+/* Hover State */
+.has-tooltip:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center; /* Forces buttons to stay on the same horizontal line */
+}
