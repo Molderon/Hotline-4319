@@ -4,29 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Control Systems - Technical University of Sofia, branch Plovdiv</title>
+    <meta name="description" content="Research and Education in Control Systems, Robotics, and AI at TU-Sofia, Plovdiv.">
     <link href="ControlSystems.css" rel="stylesheet">
 </head>
 <body id="top">
-    <div class="cyber-bg">
+    <div class="cyber-bg" aria-hidden="true">
         <div class="cyber-gradient"></div>
         <div class="matrix-rain" id="matrixRain"></div>
     </div>
+    <div class="particles" id="particlesContainer" aria-hidden="true"></div>
+    <div class="data-streams" id="dataStreams" aria-hidden="true"></div>
+    <div class="orb orb1" aria-hidden="true"></div>
+    <div class="orb orb2" aria-hidden="true"></div>
+    <div class="orb orb3" aria-hidden="true"></div>
     
-    <div class="particles" id="particlesContainer"></div>
-    
-    <div class="data-streams" id="dataStreams"></div>
-    
-    <div class="orb orb1"></div>
-    <div class="orb orb2"></div>
-    <div class="orb orb3"></div>
-    
-    <div class="grid-overlay">
+    <div class="grid-overlay" aria-hidden="true">
         <div class="grid-lines"></div>
         <div class="grid-glow"></div>
     </div>
-    
-    <div class="scanlines"></div>
-    <div class="noise-overlay"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="noise-overlay" aria-hidden="true"></div>
     
     <nav>
         <div class="nav-container">
@@ -44,12 +41,8 @@
                     </a>
                 </div>
             </div>
-            <button class="mobile-menu-button" id="mobileMenuBtn">
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+            <button class="mobile-menu-button" id="mobileMenuBtn" aria-label="Menu">
+                <div class="hamburger"><span></span><span></span><span></span></div>
             </button>
         </div>
     </nav>
@@ -77,142 +70,80 @@
             <h1 class="hero-title">
                 <span class="hero-nexus">Control</span><span class="hero-flow">Systems</span>
             </h1>
-            <p class="hero-subtitle"></p>
-                <div class="hero-buttons">
-                    <a href="#" class="btn-primary">Ph.D students Hotline</a>
-                    
-                    <div class="has-tooltip" data-tooltip="Engineering is hard, would you like some help?">
-                        <a href="#" class="btn-secondary">About</a>
-                    </div>
+            <div class="hero-buttons">
+                <a href="#" class="btn-primary">Ph.D students Hotline</a>
+                <div class="has-tooltip" data-tooltip="Engineering is hard, would you like some help?">
+                    <a href="#" class="btn-secondary">About</a>
                 </div>
+            </div>
         </div>
     </section>
 
     <section class="features" id="features">
         <h2 class="section-title">Core Features</h2>
-        <p class="section-subtitleе">We have the tendencie to enjoy hard problems</p>
+        <p class="section-subtitle">We have the tendency to enjoy hard problems</p>
         <div class="features-container">
             <div class="feature-tabs">
-                <div class="tab-item active" data-tab="performance">
-                    <span class="tab-icon">⚙</span>
-                    <span>Domains</span>
-                </div>
-                <div class="tab-item" data-tab="security">
-                    <span class="tab-icon">🔬</span>
-                    <span>Publications</span>
-                </div>
-                <div class="tab-item" data-tab="network">
-                    <span class="tab-icon">🌐</span>
-                    <span>Upcomming Events</span>
-                </div>
-                <div class="tab-item" data-tab="analytics">
-                    <span class="tab-icon">>_</span>
-                    <span>Hackaton</span>
-                </div>
-                <div class="tab-item" data-tab="integration">
-                    <span class="tab-icon">📊</span>
-                    <span>Research thesis</span>
-                </div>
+                <div class="tab-item active" data-tab="performance"><span class="tab-icon">⚙</span><span>Domains</span></div>
+                <div class="tab-item" data-tab="security"><span class="tab-icon">🔬</span><span>Publications</span></div>
+                <div class="tab-item" data-tab="network"><span class="tab-icon">🌐</span><span>Upcoming Events</span></div>
+                <div class="tab-item" data-tab="analytics"><span class="tab-icon">>_</span><span>Hackathon</span></div>
+                <div class="tab-item" data-tab="integration"><span class="tab-icon">📊</span><span>Research Thesis</span></div>
             </div>
             <div class="feature-content">
                 <div class="content-panel active" id="performance">
                     <h3>Engineering Domains</h3>
-                    <p>Experience unprecedented speed with our quantum-powered infrastructure. Built on cutting-edge technology that delivers results at the speed of thought. Electric Xtra CSS template is brought to you by TemplateMo website.</p>
+                    <p>Advanced control theory applied to industrial automation and robotics. Focused on stability, precision, and adaptive system response.</p>
                     <ul class="feature-list">
-                        <li>Sub-millisecond response times</li>
-                        <li>99.99% uptime guarantee</li>
-                        <li>Automatic scaling based on demand</li>
-                        <li>Real-time data synchronization</li>
+                        <li>Linear & Non-linear Control</li>
+                        <li>Digital Twin Synchronization</li>
+                        <li>Adaptive Filtering</li>
+                        <li>Real-time Embedded Logic</li>
                     </ul>
                 </div>
                 <div class="content-panel" id="security">
-                    <h3>Military-Grade Security</h3>
-                    <p>Your data is protected by the most advanced encryption protocols available. Multi-layered security ensures complete protection against cyber threats. You may tell your friends about TemplateMo free css website and how easy it is.</p>
+                    <h3>System Security</h3>
+                    <p>Securing the Industrial Internet of Things (IIoT). We implement multi-layered encryption to protect critical infrastructure from cyber threats.</p>
                     <ul class="feature-list">
-                        <li>256-bit AES encryption</li>
-                        <li>Biometric authentication</li>
-                        <li>Zero-knowledge architecture</li>
-                        <li>Real-time threat detection</li>
-                        <li>Automated security updates</li>
+                        <li>Encrypted Data Streams</li>
+                        <li>Secure PLC Communication</li>
+                        <li>Network Intrusion Detection</li>
+                        <li>Resilient Control Architecture</li>
                     </ul>
                 </div>
-                <div class="content-panel" id="network">
-                    <h3>Global Neural Network</h3>
-                    <p>Connect to our worldwide infrastructure that spans across continents. Seamless integration with existing systems and future-proof architecture.</p>
-                    <ul class="feature-list">
-                        <li>200+ global data centers</li>
-                        <li>Intelligent routing algorithms</li>
-                        <li>Cross-platform compatibility</li>
-                        <li>5G and satellite connectivity</li>
-                        <li>Decentralized architecture</li>
-                    </ul>
                 </div>
-                <div class="content-panel" id="analytics">
-                    <h3>Advanced Analytics</h3>
-                    <p>Harness the power of AI-driven insights to make data-driven decisions. Real-time analytics and predictive modeling at your fingertips.</p>
-                    <ul class="feature-list">
-                        <li>Machine learning algorithms</li>
-                        <li>Predictive analytics</li>
-                        <li>Custom dashboard creation</li>
-                        <li>Real-time data visualization</li>
-                        <li>Automated reporting</li>
-                    </ul>
-                </div>
-                <div class="content-panel" id="integration">
-                    <h3>Seamless Integration</h3>
-                    <p>Connect with thousands of apps and services through our universal API. Built to work with your existing tools and workflows.</p>
-                    <ul class="feature-list">
-                        <li>RESTful API architecture</li>
-                        <li>WebSocket support</li>
-                        <li>SDK for major platforms</li>
-                        <li>One-click integrations</li>
-                        <li>Custom webhook support</li>
-                    </ul>
-                </div>
-            </div>
         </div>
     </section>
  
     <section class="pricing fade-up" id="pricing">
         <div class="pricing-container">
-            <div class="section-header">
-                <h2 class="section-title">Working hours</h2>
-            </div>
-            
+            <h2 class="section-title">Consulting Hours</h2>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <div class="plan-name">Ralitsa Petrova</div>
-                    <div class="Enterity Name">Engineer, Ph.D</div>
-                    <div class="plan-period">Researcher</div>
+                    <div class="plan-details">Engineer, Ph.D | Researcher</div>
                     <ul class="plan-features">
-                        <li>Working Days: Monday - Friday</li>
-                        <li>Working Hours: 10:00 - 14:00</li>
-                        <li>I'm gonna be back at: ??:??</li>
-                        <li>Vacation:</li>                    
+                        <li>Days: Mon - Fri</li>
+                        <li>Hours: 10:00 - 14:00</li>
+                        <li>Status: Available</li>
                     </ul>
                 </div>
-                
                 <div class="pricing-card">
                     <div class="plan-name">Ivelin Karageorgiev</div>
-                    <div class="Enterity Name">Engineer, Ph.D</div>
-                    <div class="plan-period">Researcher</div>
+                    <div class="plan-details">Engineer, Ph.D | Researcher</div>
                     <ul class="plan-features">
-                        <li>Working Days: Monday - Friday</li>
-                        <li>Working Hours: 10:00 - 14:00</li>
-                        <li>I'm gonna be back at: ??:??</li>
-                        <li>Vacation:</li>                    
+                        <li>Days: Mon - Fri</li>
+                        <li>Hours: 10:00 - 14:00</li>
+                        <li>Status: Available</li>
                     </ul>
                 </div>
-                
                 <div class="pricing-card">
                     <div class="plan-name">Mehmed Medev</div>
-                    <div class="Enterity Name">Engineer, Ph.D</div>
-                    <div class="plan-period">Assistant</div>
+                    <div class="plan-details">Engineer, Ph.D | Assistant</div>
                     <ul class="plan-features">
-                        <li>Working Days: Monday - Friday</li>
-                        <li>Working Hours: ??:?? - ??:??</li>
-                        <li>I'm gonna be back at: ??:??</li>
-                        <li>Vacation:</li>                    
+                        <li>Days: Mon - Fri</li>
+                        <li>Hours: Flexible</li>
+                        <li>Status: In Lab</li>
                     </ul>
                 </div>
             </div>
@@ -223,11 +154,7 @@
         <div class="contact-container">
             <div class="contact-form">
                 <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                    
-                    <p style="display:none;">
-                        <label>Leave this empty: <input name="bot-field" /></label>
-                    </p>
-
+                    <p style="display:none;"><label>Bot Field: <input name="bot-field" /></label></p>
                     <div class="form-group">
                         <label for="name">Name [№]</label>
                         <input type="text" id="name" name="name" required>
@@ -248,38 +175,19 @@
                 </form>
             </div>
             <div class="contact-info">
-                <h3>Get Feedback</h3>
+                <h3>Contact Feedback</h3>
                 <div class="info-item">
                     <div class="info-details">
-                        <h4>Ralitsa Petrova</h4>
-                        <p>Email: r.petrova@tu-plovdiv.bg</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <div class="info-details">
-                        <h4>Ivelin karageorgiev</h4>
-                        <p>Email: i.karageorgiev@tu-plovdiv.bg</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <div class="info-details">
-                        <h4>Mehmed Medev</h4>
-                        <p>Email: m.medev@tu-plovdiv.bg</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <div class="info-icon">📍</div>
-                    <div class="info-details">
-                        <h4>Location</h4>
+                        <h4>Office Location</h4>
+                        <p>Technical University of Sofia, Branch Plovdiv</p>
                         <p>Office №4319</p>
                     </div>
                 </div>
                 <div class="map-container">
                     <div class="map-placeholder">
-                        <p>Interactive Map</p>
-                        <p style="font-size: 0.9rem; margin-top: 10px;">Neo Tokyo, Sector 7</p>
+                        <p>Interactive Map Interface</p>
+                        <p style="font-size: 0.8rem;">Plovdiv, Bulgaria</p>
                     </div>
-                    <div class="map-overlay"></div>
                 </div>
             </div>
         </div>
@@ -287,13 +195,7 @@
 
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-links">
-                <a href="#top">About</a>
-                <a href="#features">content</a>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Technica University of Sofia, branch Plovdiv.</p>
-            </div>
+            <p>&copy; 2026 Technical University of Sofia, branch Plovdiv.</p>
         </div>
     </footer>
 
