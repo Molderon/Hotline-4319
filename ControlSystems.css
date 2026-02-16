@@ -1960,8 +1960,7 @@
 
 /* About Button annimation */
 
-/* --- Hero Tooltip: Spacing & Width Fix --- */
-.has-tooltip {
+/* --- Hero Tooltip: Spacing & Width Fix --- */.has-tooltip {
     position: relative;
     display: inline-block;
 }
@@ -1970,25 +1969,21 @@
     content: attr(data-tooltip);
     position: absolute;
     
-    /* 1. POSITIONING: Lowered to clear the button entirely */
-    top: 170%;             /* Increased to ensure it's below the button level */
+    top: calc(100% + 30px); 
     left: 50%;
+    
     transform: translateX(-50%) translateY(10px); 
     
-    /* 2. WIDTH: Dynamic sizing to fit all text */
-    width: max-content;    /* Box expands to fit your text */
-    min-width: 220px;
-    padding: 15px 25px;    /* Generous side padding */
+    width: max-content;
+    padding: 12px 24px;
     
-    /* 3. CENTERING */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     line-height: 1;
 
-    /* THE REVIVED COLOR SCHEME */
-    background: rgba(15, 5, 26, 0.8); 
+    background: rgba(15, 5, 26, 0.85); 
     border: 1px solid rgba(0, 255, 255, 0.5); 
     color: var(--primary-cyan); 
     
@@ -1999,18 +1994,17 @@
     text-transform: uppercase;
     z-index: 1000;
     
-    /* High-Tech Effects */
+    /* Visuals */
     backdrop-filter: blur(10px);
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
     
-    /* Animation */
+    /* Transition */
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease-out;
     pointer-events: none;
 }
 
-/* Hover State */
 .has-tooltip:hover::before {
     opacity: 1;
     visibility: visible;
@@ -2021,5 +2015,5 @@
     display: flex;
     gap: 20px;
     justify-content: center;
-    align-items: center; /* Forces buttons to stay on the same horizontal line */
+    align-items: center;
 }

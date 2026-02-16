@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Control Systems - Technical University of Sofia, branch Plovdiv</title>
     <link href="ControlSystems.css" rel="stylesheet">
-
 </head>
 <body id="top">
-    <!-- Enhanced Background Elements -->
     <div class="cyber-bg">
         <div class="cyber-gradient"></div>
         <div class="matrix-rain" id="matrixRain"></div>
@@ -30,7 +28,6 @@
     <div class="scanlines"></div>
     <div class="noise-overlay"></div>
     
-    <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <a href="#top" class="logo">./ControlSystems.sh</a>
@@ -57,7 +54,6 @@
         </div>
     </nav>
 
-    <!-- Mobile Menu -->
     <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-header">
@@ -76,7 +72,6 @@
         </nav>
     </div>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
             <h1 class="hero-title">
@@ -84,16 +79,15 @@
             </h1>
             <p class="hero-subtitle"></p>
                 <div class="hero-buttons">
-                    <a href="#" class="btn-primary">Solution Hotline</a>
+                    <a href="#" class="btn-primary">Ph.D students Hotline</a>
                     
-                    <div class="has-tooltip" data-tooltip="ACCESSING CORE DIRECTORY: ABOUT.LOG">
+                    <div class="has-tooltip" data-tooltip="Engineering is hard, would you like some help?">
                         <a href="#" class="btn-secondary">About</a>
                     </div>
                 </div>
         </div>
     </section>
 
-    <!-- Features Section with Tabs -->
     <section class="features" id="features">
         <h2 class="section-title">Core Features</h2>
         <p class="section-subtitleе">We have the tendencie to enjoy hard problems</p>
@@ -122,7 +116,7 @@
             </div>
             <div class="feature-content">
                 <div class="content-panel active" id="performance">
-                    <h3>Lightning Fast Performance</h3>
+                    <h3>Engineering Domains</h3>
                     <p>Experience unprecedented speed with our quantum-powered infrastructure. Built on cutting-edge technology that delivers results at the speed of thought. Electric Xtra CSS template is brought to you by TemplateMo website.</p>
                     <ul class="feature-list">
                         <li>Sub-millisecond response times</li>
@@ -178,61 +172,11 @@
             </div>
         </div>
     </section>
-       
-    <!-- Features Section
-    <section class="features fade-up" id="features">
-        <div class="features-container2">
-            <div class="section-header">
-                <h2 class="section-title">Core Systems</h2>
-                <p class="section-subtitle">Domains of Knowladge</p>
-            </div>
-            
-            <div class="features-grid2">
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Digital Twins</h3>
-                    <p>Laveraging live systems with universal approximators</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🔮</div>
-                    <h3>Machine Learning</h3>
-                    <p>When State machines don't do the job.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🌐</div>
-                    <h3>Robotics</h3>
-                    <p>Bullet 4.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3>Computer Science</h3>
-                    <p>From bytes to clouds</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🚀</div>
-                    <h3>Data Science</h3>
-                    <p>Research and Development</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Embedded Systems</h3>
-                    <p></p>
-                </div>
-            </div>
-        </div>
-    </section> -->
  
-    <!-- Pricing Section -->
     <section class="pricing fade-up" id="pricing">
         <div class="pricing-container">
             <div class="section-header">
                 <h2 class="section-title">Working hours</h2>
-                <!-- <p class="section-subtitle">We have the tendencie to enjoy hard problems</p> -->
             </div>
             
             <div class="pricing-grid">
@@ -246,7 +190,6 @@
                         <li>I'm gonna be back at: ??:??</li>
                         <li>Vacation:</li>                    
                     </ul>
-                    <!-- <a href="#" class="btn-secondary">Contact</a> -->
                 </div>
                 
                 <div class="pricing-card">
@@ -259,7 +202,6 @@
                         <li>I'm gonna be back at: ??:??</li>
                         <li>Vacation:</li>                    
                     </ul>
-                    <!-- <a href="#" class="btn-secondary">Contact</a> -->
                 </div>
                 
                 <div class="pricing-card">
@@ -272,24 +214,26 @@
                         <li>I'm gonna be back at: ??:??</li>
                         <li>Vacation:</li>                    
                     </ul>
-                    <!-- <a href="#" class="btn-secondary">Contact</a> -->
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact" id="contact">
-        <!-- <h2 class="section-title">Get In Touch</h2> -->
         <div class="contact-container">
             <div class="contact-form">
-                <form id="contactForm">
+                <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    
+                    <p style="display:none;">
+                        <label>Leave this empty: <input name="bot-field" /></label>
+                    </p>
+
                     <div class="form-group">
                         <label for="name">Name [№]</label>
                         <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
+                        <label for="email">Your Email</label>
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
@@ -304,23 +248,20 @@
                 </form>
             </div>
             <div class="contact-info">
-                <h3>Connect With Us</h3>
+                <h3>Get Feedback</h3>
                 <div class="info-item">
-                    <!-- <div class="info-icon">📧</div> -->
                     <div class="info-details">
                         <h4>Ralitsa Petrova</h4>
                         <p>Email: r.petrova@tu-plovdiv.bg</p>
                     </div>
                 </div>
                 <div class="info-item">
-                    <!-- <div class="info-icon">📱</div> -->
                     <div class="info-details">
                         <h4>Ivelin karageorgiev</h4>
                         <p>Email: i.karageorgiev@tu-plovdiv.bg</p>
                     </div>
                 </div>
                 <div class="info-item">
-                    <!-- <div class="info-icon">📱</div> -->
                     <div class="info-details">
                         <h4>Mehmed Medev</h4>
                         <p>Email: m.medev@tu-plovdiv.bg</p>
@@ -344,7 +285,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-links">
