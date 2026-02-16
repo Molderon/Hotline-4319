@@ -248,7 +248,7 @@ if (contactForm) {
         data.append("form-name", "contact");
 
         try {
-            const response = await fetch("/", {
+            const response = await fetch("/.netlify/functions/transmit", { // Updated path
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: data.toString()
@@ -295,4 +295,5 @@ setInterval(() => {
 // Global Styles for Cyber Text
 const style = document.createElement('style');
 style.textContent = `@keyframes fadeOut { 0% { opacity: 0.7; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-50px); } }`;
+
 document.head.appendChild(style);
