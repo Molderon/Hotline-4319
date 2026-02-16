@@ -153,7 +153,7 @@
     <section class="contact" id="contact">
         <div class="contact-container">
             <div class="contact-form">
-                <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <form id="contactForm" name="contact" method="POST" action="/.netlify/functions/transmit" data-netlify="true" netlify-honeypot="bot-field">
                     <p style="display:none;"><label>Bot Field: <input name="bot-field" /></label></p>
                     <div class="form-group">
                         <label for="name">Name [№]</label>
@@ -201,4 +201,5 @@
 
     <script src="ControlSystems.js"></script>
 </body>
+
 </html>
