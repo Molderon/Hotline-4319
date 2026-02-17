@@ -4,8 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Control Systems - Technical University of Sofia, branch Plovdiv</title>
-    <meta name="description" content="Research and Education in Control Systems, Robotics, and AI at TU-Sofia, Plovdiv.">
     <link href="ControlSystems.css" rel="stylesheet">
+    <style>
+        /* Targeted fixes for Spacing, Card Width, and Gaps */
+        section {
+            padding-bottom: 60px !important; 
+            padding-top: 60px !important;
+            margin-bottom: 0 !important;
+        }
+
+        #pricing {
+            padding-bottom: 120px !important; 
+        }
+
+        .pricing-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            min-width: 380px; 
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 40px 30px !important;
+        }
+
+        .plan-features li {
+            white-space: nowrap; 
+            font-size: 0.95rem;
+        }
+
+        .contact {
+            padding-top: 40px !important;
+            padding-bottom: 40px !important;
+        }
+
+        .footer {
+            margin-top: 0 !important;
+            padding: 30px 0 !important;
+            background: transparent !important;
+            border-top: 1px solid rgba(0,255,255,0.1);
+        }
+    </style>
 </head>
 <body id="top">
     <div class="cyber-bg" aria-hidden="true">
@@ -17,11 +63,7 @@
     <div class="orb orb1" aria-hidden="true"></div>
     <div class="orb orb2" aria-hidden="true"></div>
     <div class="orb orb3" aria-hidden="true"></div>
-    
-    <div class="grid-overlay" aria-hidden="true">
-        <div class="grid-lines"></div>
-        <div class="grid-glow"></div>
-    </div>
+    <div class="grid-overlay" aria-hidden="true"><div class="grid-lines"></div><div class="grid-glow"></div></div>
     <div class="scanlines" aria-hidden="true"></div>
     <div class="noise-overlay" aria-hidden="true"></div>
     
@@ -41,29 +83,11 @@
                     </a>
                 </div>
             </div>
-            <button class="mobile-menu-button" id="mobileMenuBtn" aria-label="Menu">
+            <button class="mobile-menu-button" id="mobileMenuBtn">
                 <div class="hamburger"><span></span><span></span><span></span></div>
             </button>
         </div>
     </nav>
-
-    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-header">
-            <a href="#top" class="mobile-menu-logo">./ControlSystems.sh</a>
-            <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
-        </div>
-        <div class="mobile-menu-cta">
-            <a href="#" class="cyber-button">IRC ROOM</a>
-        </div>
-        <nav class="mobile-menu-nav">
-            <ul>
-                <li><a href="#features">Contacts</a></li>
-                <li><a href="#pricing">Staff Contacts</a></li>
-                <li><a href="#contact">Say Hi :)</a></li>
-            </ul>
-        </nav>
-    </div>
 
     <section class="hero">
         <div class="hero-container">
@@ -71,9 +95,15 @@
                 <span class="hero-nexus">Control</span><span class="hero-flow">Systems</span>
             </h1>
             <div class="hero-buttons">
-                <a href="#" class="btn-primary">Ph.D students Hotline</a>
-                <div class="has-tooltip" data-tooltip="Engineering is hard, would you like some help?">
-                    <a href="#" class="btn-secondary">About</a>
+                <a href="#" class="btn-primary">
+                    <span class="btn-content">Solution Hotline</span>
+                </a>
+                
+                <div class="has-tooltip" data-tooltip='->_{_%_}["->_{_%%_}[%p]"]''>
+                    <a href="#" class="btn-secondary">
+                        <span class="btn-content">About</span>
+                        <span class="btn-glitch"></span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -81,69 +111,105 @@
 
     <section class="features" id="features">
         <h2 class="section-title">Core Features</h2>
-        <p class="section-subtitle">We have the tendency to enjoy hard problems</p>
+        <p class="section-subtitle">"Welcome to the internet, have a look around."</p>
         <div class="features-container">
             <div class="feature-tabs">
                 <div class="tab-item active" data-tab="performance"><span class="tab-icon">⚙</span><span>Domains</span></div>
                 <div class="tab-item" data-tab="security"><span class="tab-icon">🔬</span><span>Publications</span></div>
-                <div class="tab-item" data-tab="network"><span class="tab-icon">🌐</span><span>Upcoming Events</span></div>
+                <div class="tab-item" data-tab="network"><span class="tab-icon">🌐</span><span>Events</span></div>
                 <div class="tab-item" data-tab="analytics"><span class="tab-icon">>_</span><span>Hackathon</span></div>
-                <div class="tab-item" data-tab="integration"><span class="tab-icon">📊</span><span>Research Thesis</span></div>
+                <div class="tab-item" data-tab="integration"><span class="tab-icon">📊</span><span>Thesis</span></div>
             </div>
             <div class="feature-content">
                 <div class="content-panel active" id="performance">
-                    <h3>Engineering Domains</h3>
-                    <p>Advanced control theory applied to industrial automation and robotics. Focused on stability, precision, and adaptive system response.</p>
+                    <h3>Adaptive Existentialism</h3>
+                    <p>We optimize control loops so your machines can experience a mid-life crisis at 2 billion cycles per second. Total efficiency, zero purpose.</p>
                     <ul class="feature-list">
-                        <li>Linear & Non-linear Control</li>
-                        <li>Digital Twin Synchronization</li>
-                        <li>Adaptive Filtering</li>
-                        <li>Real-time Embedded Logic</li>
+                        <li>PID controllers that feel "just okay."</li>
+                        <li>Automated regret-minimization algorithms.</li>
+                        <li>Non-linear feedback for non-linear trauma.</li>
+                        <li>Stability found only in the vacuum of space.</li>
                     </ul>
                 </div>
                 <div class="content-panel" id="security">
-                    <h3>System Security</h3>
-                    <p>Securing the Industrial Internet of Things (IIoT). We implement multi-layered encryption to protect critical infrastructure from cyber threats.</p>
+                    <h3>The Security Theater</h3>
+                    <p>We encrypt your data so thoroughly that even God can't see why you spent $14 on a digital avocado toast.</p>
                     <ul class="feature-list">
-                        <li>Encrypted Data Streams</li>
-                        <li>Secure PLC Communication</li>
-                        <li>Network Intrusion Detection</li>
-                        <li>Resilient Control Architecture</li>
+                        <li>256-bit encryption for your 4-bit problems.</li>
+                        <li>Firewalls thicker than your denial.</li>
+                        <li>Password strength: "DeeplyDepressed123!"</li>
+                        <li>Biometric locks for people who hate themselves.</li>
                     </ul>
                 </div>
+                <div class="content-panel" id="network">
+                    <h3>Social Distance Networking</h3>
+                    <p>Connecting the world so we can all feel lonely together. Low-latency links to ensure you are ignored in real-time.</p>
+                    <ul class="feature-list">
+                        <li>High-speed fiber for low-speed conversations.</li>
+                        <li>Decentralized nodes (just like your friend group).</li>
+                        <li>Packet loss as a metaphor for missed connections.</li>
+                        <li>5G signal strong enough to melt your ego.</li>
+                    </ul>
                 </div>
+                <div class="content-panel" id="analytics">
+                    <h3>Predictive Disasters</h3>
+                    <p>Our AI analyzes your past mistakes to accurately predict exactly how you'll ruin next Tuesday.</p>
+                    <ul class="feature-list">
+                        <li>Machine learning that learns to be tired.</li>
+                        <li>Big Data for people with tiny attention spans.</li>
+                        <li>Stochastic modeling of your inevitable burnout.</li>
+                        <li>Deep learning... but not too deep, it’s scary.</li>
+                    </ul>
+                </div>
+                <div class="content-panel" id="integration">
+                    <h3>API (Anxiety Programming Interface)</h3>
+                    <p>Seamlessly integrate your remaining sanity with our cloud infrastructure. It's funny how the cloud is just someone's basement.</p>
+                    <ul class="feature-list">
+                        <li>RESTful APIs for restless developers.</li>
+                        <li>Universal Handshakes (without the eye contact).</li>
+                        <li>Legacy support for your outdated worldview.</li>
+                        <li>Websockets that leak more than your secrets.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
  
     <section class="pricing fade-up" id="pricing">
         <div class="pricing-container">
-            <h2 class="section-title">Consulting Hours</h2>
+            <div class="section-header"><h2 class="section-title">Working Hours</h2></div>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <div class="plan-name">Ralitsa Petrova</div>
-                    <div class="plan-details">Engineer, Ph.D | Researcher</div>
+                    <div class="Enterity Name">Engineer, Ph.D</div>
+                    <div class="plan-period">Researcher</div>
                     <ul class="plan-features">
-                        <li>Days: Mon - Fri</li>
-                        <li>Hours: 10:00 - 14:00</li>
-                        <li>Status: Available</li>
+                        <li>Working Days: Monday - Friday</li>
+                        <li>Working Hours: 10:00 - 14:00</li>
+                        <li>Status: Pretending to be busy</li>
+                        <li>Consulting: №4319</li>                    
                     </ul>
                 </div>
                 <div class="pricing-card">
                     <div class="plan-name">Ivelin Karageorgiev</div>
-                    <div class="plan-details">Engineer, Ph.D | Researcher</div>
+                    <div class="Enterity Name">Engineer, Ph.D</div>
+                    <div class="plan-period">Researcher</div>
                     <ul class="plan-features">
-                        <li>Days: Mon - Fri</li>
-                        <li>Hours: 10:00 - 14:00</li>
-                        <li>Status: Available</li>
+                        <li>Working Days: Monday - Friday</li>
+                        <li>Working Hours: 10:00 - 14:00</li>
+                        <li>Status: Stuck in a loop</li>
+                        <li>Consulting: №4319</li>                    
                     </ul>
                 </div>
                 <div class="pricing-card">
                     <div class="plan-name">Mehmed Medev</div>
-                    <div class="plan-details">Engineer, Ph.D | Assistant</div>
+                    <div class="Enterity Name">Engineer, Ph.D</div>
+                    <div class="plan-period">Assistant</div>
                     <ul class="plan-features">
-                        <li>Days: Mon - Fri</li>
-                        <li>Hours: Flexible</li>
-                        <li>Status: In Lab</li>
+                        <li>Working Days: Monday - Friday</li>
+                        <li>Working Hours: Flexible (Chaos)</li>
+                        <li>Status: Out of Coffee</li>
+                        <li>Consulting: №4319</li>                    
                     </ul>
                 </div>
             </div>
@@ -153,14 +219,14 @@
     <section class="contact" id="contact">
         <div class="contact-container">
             <div class="contact-form">
-                    <form id="contactForm" name="contact" method="POST" action="/.netlify/functions/transmit" data-netlify="true" netlify-honeypot="bot-field">
+                <form id="contactForm" name="contact" method="POST" action="/.netlify/functions/transmit" data-netlify="true" netlify-honeypot="bot-field">
                     <p style="display:none;"><label>Bot Field: <input name="bot-field" /></label></p>
                     <div class="form-group">
                         <label for="name">Name [№]</label>
                         <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Your Email</label>
+                        <label for="email">Email</label>
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
@@ -175,18 +241,36 @@
                 </form>
             </div>
             <div class="contact-info">
-                <h3>Contact Feedback</h3>
+                <h3>Connect Feedback</h3>
                 <div class="info-item">
                     <div class="info-details">
-                        <h4>Office Location</h4>
-                        <p>Technical University of Sofia, Branch Plovdiv</p>
-                        <p>Office №4319</p>
+                        <h4>Ralitsa Petrova</h4>
+                        <p>r.petrova@tu-plovdiv.bg</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-details">
+                        <h4>Ivelin karageorgiev</h4>
+                        <p>i.karageorgiev@tu-plovdiv.bg</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-details">
+                        <h4>Mehmed Medev</h4>
+                        <p>m.medev@tu-plovdiv.bg</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div class="info-details">
+                        <h4>Office №4319</h4>
+                        <p>TU-Sofia, Plovdiv Branch</p>
                     </div>
                 </div>
                 <div class="map-container">
                     <div class="map-placeholder">
-                        <p>Interactive Map Interface</p>
-                        <p style="font-size: 0.8rem;">Plovdiv, Bulgaria</p>
+                        <p>Interactive Map</p>
+                        <p style="font-size: 0.8rem; margin-top: 5px;">Plovdiv, Sector 7</p>
                     </div>
                 </div>
             </div>
@@ -195,11 +279,10 @@
 
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2026 Technical University of Sofia, branch Plovdiv.</p>
+            <p>&copy; 2026 Technical University of Sofia, branch Plovdiv. | All rights reserved (mostly).</p>
         </div>
     </footer>
 
     <script src="ControlSystems.js"></script>
 </body>
-
 </html>
