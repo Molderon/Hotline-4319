@@ -298,8 +298,6 @@ document.head.appendChild(style);
 /* ==================
   - Icon Managment
 ===================== */
-
-
 const iconCache = new Map();
 
 class SystemIcon extends HTMLElement {
@@ -310,18 +308,15 @@ class SystemIcon extends HTMLElement {
 
   static get observedAttributes() { return ['name', 'color']; }
 
-  async attributeChangedCallback() {
-    this.render();
-  }
-
-  async connectedCallback() {
-    this.render();
-  }
+  attributeChangedCallback() { this.render(); }
+  connectedCallback() { this.render(); }
 
   async render() {
     const name = this.getAttribute('name');
     const color = this.getAttribute('color') || 'currentColor';
-    const path = `/assets/icons/${name}.svg`;
+    
+    // RELATIVE PATH: Essential for GitHub Pages sub-folders
+    const path = `assets/icons/${name}.svg`;
 
     let svgData = "";
 
@@ -330,44 +325,61 @@ class SystemIcon extends HTMLElement {
     } else {
       try {
         const response = await fetch(path);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
         svgData = await response.text();
-        iconCache.set(path, svgText);
+        iconCache.set(path, svgData);
       } catch (err) {
-        console.error(`Icon [${name}] failed to load.`);
+        console.error(`[Icon Error] Could not load ${path}. Check if file exists in assets/icons/`);
+        // Fallback: Show a small dot if icon fails so layout doesn't collapse
+        svgData = `<svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="3" fill="red"/></svg>`;
       }
     }
 
+    // SHADOW CSS: Fixed '1em' sizing to prevent the "Enormous" bug
     this.shadowRoot.innerHTML = `
       <style>
         :host {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
+          display: inline-block;
           width: 1.2em;
           height: 1.2em;
           vertical-align: middle;
           color: ${color};
+          line-height: 1;
         }
         svg {
           width: 100%;
           height: 100%;
           fill: currentColor;
+          display: block;
         }
       </style>
-      ${svgData}
-    `;
+      ${svgData}`;
   }
 }
 
-// Define the new tag
-customElements.define('sys-icon', SystemIcon);
+if (!customElements.get('sys-icon')) {
+    customElements.define('sys-icon', SystemIcon);
+}
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Inject the same numeric icons into the list items to match the tabs
-    IconManager.inject('2', '.dom-bullets li');
-    IconManager.inject('3', '.pub-bullets li');
-    IconManager.inject('4', '.event-bullets li');
-    IconManager.inject('5', '.hack-bullets li');
-    IconManager.inject('6', '.thesis-bullets li');
-});
-});
+const IconManager = {
+    async inject(iconName, selector) {
+        const path = `assets/icons/${iconName}.svg`;
+        try {
+            const response = await fetch(path);
+            if (!response.ok) return;
+            const svgData = await response.text();
+            document.querySelectorAll(selector).forEach(el => {
+                // Prevent double injection if script runs twice
+                if (el.querySelector('.icon-container')) return;
+                
+                const span = document.createElement('span');
+                span.className = 'icon-container';
+                span.style.display = 'inline-block';
+                span.style.width = '1em';
+                span.style.marginRight = '10px';
+                span.innerHTML = svgData;
+                el.prepend(span);
+            });
+        } catch (e) { console.error("Bullet load failure", e); }
+    }
+};
