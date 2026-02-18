@@ -320,7 +320,7 @@ class SystemIcon extends HTMLElement {
   async render() {
     const name = this.getAttribute('name');
     const color = this.getAttribute('color') || 'currentColor';
-    const path = `/assets/icons/${name}.svg`;
+    const path = `assets/icons/${name}.svg`;
 
     let svgData = "";
 
@@ -368,4 +368,5 @@ document.addEventListener('DOMContentLoaded', () => {
     IconManager.inject('4', '.event-bullets li');
     IconManager.inject('5', '.hack-bullets li');
     IconManager.inject('6', '.thesis-bullets li');
+
 });
