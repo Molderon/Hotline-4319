@@ -320,7 +320,7 @@ class SystemIcon extends HTMLElement {
   async render() {
     const name = this.getAttribute('name');
     const color = this.getAttribute('color') || 'currentColor';
-    const path = `assets/icons/${name}.svg`;
+    const path = `/assets/icons/${name}.svg`;
 
     let svgData = "";
 
@@ -336,20 +336,25 @@ class SystemIcon extends HTMLElement {
       }
     }
 
-    this.shadowRoot.innerHTML = `
+this.shadowRoot.innerHTML = `
       <style>
         :host {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          width: 1.2em;
-          height: 1.2em;
+          /* This ensures the icon stays the same size as your font */
+          width: 1em; 
+          height: 1em;
+          min-width: 1em;
+          min-height: 1em;
           vertical-align: middle;
           color: ${color};
+          line-height: 1;
         }
         svg {
           width: 100%;
           height: 100%;
+          display: block;
           fill: currentColor;
         }
       </style>
@@ -368,5 +373,4 @@ document.addEventListener('DOMContentLoaded', () => {
     IconManager.inject('4', '.event-bullets li');
     IconManager.inject('5', '.hack-bullets li');
     IconManager.inject('6', '.thesis-bullets li');
-
 });
