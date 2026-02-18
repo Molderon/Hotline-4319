@@ -1,6 +1,3 @@
-/* ==========================================================
-   MOBILE MENU FUNCTIONALITY
-   ========================================================== */
 function initializeMobileMenu() {
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -248,7 +245,7 @@ if (contactForm) {
         data.append("form-name", "contact");
 
         try {
-            const response = await fetch("/.netlify/functions/transmit", { // Updated path
+            const response = await fetch("/", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: data.toString()
@@ -295,5 +292,80 @@ setInterval(() => {
 // Global Styles for Cyber Text
 const style = document.createElement('style');
 style.textContent = `@keyframes fadeOut { 0% { opacity: 0.7; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-50px); } }`;
-
 document.head.appendChild(style);
+
+
+/* ==================
+  - Icon Managment
+===================== */
+
+const iconCache = new Map();
+
+class SystemIcon extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' }); 
+  }
+
+  static get observedAttributes() { return ['name', 'color']; }
+
+  async attributeChangedCallback() {
+    this.render();
+  }
+
+  async connectedCallback() {
+    this.render();
+  }
+
+  async render() {
+    const name = this.getAttribute('name');
+    const color = this.getAttribute('color') || 'currentColor';
+    const path = `/assets/icons/${name}.svg`;
+
+    let svgData = "";
+
+    if (iconCache.has(path)) {
+      svgData = iconCache.get(path);
+    } else {
+      try {
+        const response = await fetch(path);
+        svgData = await response.text();
+        iconCache.set(path, svgText);
+      } catch (err) {
+        console.error(`Icon [${name}] failed to load.`);
+      }
+    }
+
+    this.shadowRoot.innerHTML = `
+      <style>
+        :host {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 1.2em;
+          height: 1.2em;
+          vertical-align: middle;
+          color: ${color};
+        }
+        svg {
+          width: 100%;
+          height: 100%;
+          fill: currentColor;
+        }
+      </style>
+      ${svgData}
+    `;
+  }
+}
+
+// Define the new tag
+customElements.define('sys-icon', SystemIcon);
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Inject the same numeric icons into the list items to match the tabs
+    IconManager.inject('2', '.dom-bullets li');
+    IconManager.inject('3', '.pub-bullets li');
+    IconManager.inject('4', '.event-bullets li');
+    IconManager.inject('5', '.hack-bullets li');
+    IconManager.inject('6', '.thesis-bullets li');
+});
