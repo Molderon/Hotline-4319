@@ -297,55 +297,52 @@
     <main class="about-container">
         <a href="index.html" class="back-link">Back to main</a>
 
-        <!-- ── Section A: Purpose ─────────────────────────────────────── -->
-        <section class="about-section">
-            <span class="section-label">// about.sh --purpose</span>
-            <h1 class="section-title">What is this?</h1>
+<!-- ── Section A: Purpose ─────────────────────────────────────── -->
+<section class="about-section">
+    <span class="section-label">// about.sh --purpose</span>
+    <h1 class="section-title">What is this?</h1>
 
-            <p class="about-lead">
-                This is the open research interface for the Control Systems group at the Technical University
-                of Sofia, Plovdiv Branch — an engineering department whose work spans classical and modern
-                control theory, intelligent systems, robotics, and industrial automation.
-            </p>
+    <p class="about-lead">
+        Hi. Once upon a time, I was a magnificent menace of a student, yet entirely obsessed with tearing technology apart to see its guts. Now? I’m older, objectively dumber, and deeply regretful that never had a straightforward way to actually talk to the professionals doing the real work around town. 
+        
+       So...<br> <br>
+        Get the following metaphore:<br>
+<blockquote class="metaphor-quote">
+    "If you could revive Vivaldi to ask him — 'but how do you do that X, Y and Z thingy on the violin?' Now you get straight discrete answer in 5 minutes rather than spending weeks to months emulating his sound."
+</blockquote>
+        Please have a slight disregard to any wobbles of mine. I’ve been having a few drinks. <br><br>
+    </p>
 
-            <p class="about-body">
-                The site exists to make the group's work visible and accessible. Academic research too often
-                remains locked inside conference papers and university archives. Here, we document active
-                projects, publish research notes, and maintain a running account of what we are building
-                and why. Everything is written for an audience of engineers, PhD students, and technically
-                curious visitors — not press releases.
-            </p>
+    <p class="about-body">
+        I belive we all adore the creative part of engineering as a recreative and inqisitive matter, and for me whats getting the fire going is learning about tools, technologies and applicaitons.   So much so the main trend in discussions I catch when talking with developers is always around the toolbelt. - So could you point where virtually are these discussions held at TU-Plovdiv? I wish I could tell. 
+    </p>
 
-            <p class="about-body">
-                The design intentionally reflects the aesthetic of the tools we use every day: terminals,
-                monospace editors, oscilloscope readouts, block diagrams. If it looks like a laboratory
-                instrument rather than a marketing page, that is by choice.
-            </p>
+    <p class="about-body">
+        <br>
+         Another thing - What about reserach?<br> Wouldn't it be cool to have a simple acccessable blog or journal where a student can get a feel what are the clever heads actually doing? All the years spend here and it's just now I'm enlighened things. I've been around enough to tell that there are entusiats that would like to be outsourced with some trivial work on analysis, articles and developments. 
+    </p>
+    
+    <p class="about-body">
+    <br>
+        One thing westen and leading European universities do is organazing Hackatons with the soul purpose of serarching for talant and allowing people to get a "remote" feel of what kind of problems does a X company solves, what you can learn from them and perhaps getting a good estimate how much you need to 'know' before entertaining the idea of working in the field. 
+    </p>
+    So, I’m putting the queries to you. Would you like a digital campfire?
+ <ul class="feature-list">
+<li>Domains of research: overview of active developments and objectives</li><li>Blog — academic notes, project updates, tool reveiws and events</li><li>Homebrew — showcase of local open-source projects </li><li>PhD student profiles and active research topics</li><li>IRC room — live, open-access channel for discussion</li><li>Contact form routing directly to the department</li>
 
-            <ul class="feature-list">
-                <li>Research domain overview with engineering-accurate descriptions</li>
-                <li>Blog — academic notes, project updates, and field reports</li>
-                <li>Homebrew — open-source projects from the group's researchers</li>
-                <li>PhD student profiles and active research topics</li>
-                <li>IRC room — live, open-access channel for discussion</li>
-                <li>Contact form routing directly to the department</li>
-            </ul>
-
-            <p class="about-body">
-                The website is itself a research artefact. It is built without frameworks, bundlers, or
-                transpilers — every page is plain HTML, CSS, and JavaScript. The backend runs on a
-                self-hosted NixOS machine behind a Cloudflare Tunnel. The source is open, the dependencies
-                are minimal, and the stack is documented below.
-            </p>
-        </section>
+</ul> 
+    <p class="about-body">
+        This website was forged in the fires of sheer, unyielding stubbornness. No trendy frameworks, no bundlers, no transpilers that will be obsolete in three weeks. Every page is naked HTML, CSS, and JavaScript. The backend is a self-hosted NixOS box sitting in the dark behind a Cloudflare Tunnel. The source is open, the dependencies are practically zero, and the madness is documented below.
+    </p>
+</section>
 
         <!-- ── Section B: Internals ───────────────────────────────────── -->
         <section class="about-section">
-            <span class="section-label">// about.sh --internals</span>
+            <span class="section-label">// about.sh --internals</span><br>
             <h2 class="section-title">Innerworkings</h2>
 
             <p class="about-body">
-                A full technical breakdown of every layer of the stack. All components are open-source
+                A full technical breakdown. All components are open-source
                 or standard platform services. Nothing proprietary.
             </p>
 
@@ -400,7 +397,7 @@
     <div class="readme-h2">Hosting &amp; Deployment</div>
     <ul class="readme-ul">
         <li><span class="rl-key">Netlify</span> — static frontend + Functions (contact form → Discord webhook)</li>
-        <li><span class="rl-key">Self-hosted</span> — NixOS machine "Dedalus", backend via systemd</li>
+        <li><span class="rl-key">Self-hosted</span> — NixOS machine, backend via systemd</li>
         <li><span class="rl-key">Cloudflare Tunnel</span> — cloudflared → public HTTPS/WSS, no open inbound ports</li>
     </ul>
 

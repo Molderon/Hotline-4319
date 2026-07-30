@@ -17,6 +17,14 @@
             overflow: hidden;
             z-index: -5;
         }
+        .metaphor-quote {
+    font-size: 0.9em;          /* Makes the text a bit smaller */
+    font-style: italic;        /* Gives it that narrative quote feel */
+    border-left: 3px solid #888; /* Adds a vertical line to the left */
+    padding-left: 15px;        /* Pushes the text away from the line */
+    margin: 20px 0;            /* Adds breathing room above and below */
+    opacity: 0.9;              /* Softens the text color slightly */
+}
 
         /* Animated gradient background */
         .cyber-gradient {
